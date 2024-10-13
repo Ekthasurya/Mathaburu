@@ -6,11 +6,11 @@
 
 
   
-@media  screen and (min-width:768px) {
+@media  screen and (min-width:1024px) {
 /* Navbar */
 #logo{
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
 }
 
 
@@ -440,10 +440,12 @@
 
 /* Mediam screens */
 
-@media  screen and (min-width:480px) and (max-width:768px){
-  #logo{
-    width: 75px;
-  }
+@media  screen and (min-width:768px) and (max-width:1024px){
+  
+    #logo{
+      width: 40px;
+      height: 40px;
+    }
   .card1{
     width: 200px;
     height: 300px;
@@ -489,7 +491,11 @@
 }
 
 /* small Screens */
-@media  screen and  (max-width:480px) {
+@media  screen and  (max-width:768px) {
+  #logo{
+    width: 32px;
+    height: 32px;
+  }
   .aboutImg{
     width: 100px;
     height: 200px;
@@ -696,7 +702,7 @@
 
    .Ccard1 {
     padding: 10px;
-    height: 150px;
+    height: 155px;
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
    }

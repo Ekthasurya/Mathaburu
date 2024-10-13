@@ -81,7 +81,7 @@ const Rooms = () => {
 </div>
 
 <Flex justifyContent="center" paddingBottom={10} >
-  <a href="/RoomDetails">
+  <a href="/#roomDetails">
 <button class="animated-button" >
   <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
     <path
