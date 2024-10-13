@@ -13,7 +13,7 @@ const Home = () => {
         <Text color="white" textAlign="center" fontWeight={600} fontSize={{lg:"22px",md:"18px",base:"25px"}}>WELCOME TO</Text>
         <Text color="white"  textAlign="center" fontWeight={600}  fontSize={{lg:"80px",md:"70px",base:"35px"}}>Matha Buru Hill Eco</Text>
         <Text color="white" textAlign="center" fontWeight={600} fontSize={{lg:"50px",md:"45px",base:"30px"}}>Resort</Text>
-        <Text color="white" textAlign="center" fontWeight={600} fontSize={{lg:"50px",md:"45px",base:"30px"}}>Sonkupi</Text>
+        <Text color="white" textAlign="center" fontWeight={600} fontSize={{lg:"30px",md:"25px",base:"18px"}}>Sonkupi</Text>
        </Flex>
       
       </Flex>

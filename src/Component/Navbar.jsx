@@ -49,7 +49,7 @@ function BasicExample() {
     </Flex>
 
 {isOpen ? (
-  <Box p={2} display={{ lg: 'none',md:"flex",sm:"flex" }} flexDirection={{lg:"none", md:"column", sm:"column"}} bg="#2b3433" color="white" w="100%" paddingTop={75} justifyContent="center" gap={2} alignItems="center" position= "fixed"
+  <Box p={2} display={{ lg: 'none',md:"flex",sm:"flex" }} flexDirection={{lg:"none", md:"column", sm:"column"}} bg="#2b3433" color="white" w="100%" paddingTop={75} justifyContent="center" alignContent="center" gap={2} alignItems="center" position= "fixed"
   top={0}
   left={0}
   line-height= "50px"

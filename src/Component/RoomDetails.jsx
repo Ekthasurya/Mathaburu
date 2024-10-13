@@ -292,7 +292,7 @@ const RoomDetails = () => {
 
                         {/* Non-Ac */}
       <Box bg="#f4f4f4" paddingTop={{lg:"50px",md:"30px", base:"10px"}} paddingBottom={{lg:"50px",md:"30px", base:"10px"}}>
-       <Flex marginTop={90} direction="column" gap={5} marginLeft={{lg:"100px",md:"70px",base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}  boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" padding={20}>
+       <Flex marginTop={90} borderRadius={20} direction="column" gap={5} marginLeft={{lg:"100px",md:"70px",base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}  boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" padding={20}>
        <Text textAlign="center" fontSize={30} fontWeight={600}>Non AC Cottage</Text>
        <Flex justifyContent="space-between" direction={{lg:"row",md:"column", base:"column"}} alignItems="center" alignContent="center" gap={{lg:"100px",md:"50px", base:"30px"}}>
       <VStack  p={5}  >
@@ -349,7 +349,7 @@ const RoomDetails = () => {
                        {/* Single-bed */}
 
      <Box bg="#f4f4f4" paddingTop={{lg:"50px",md:"30px", base:"10px"}} paddingBottom={{lg:"50px",md:"30px", base:"10px"}}>
-       <Flex marginTop={90} direction="column" gap={5} marginLeft={{lg:"100px",md:"70px", base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}  boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" padding={20}>
+       <Flex marginTop={90} borderRadius={20} direction="column" gap={5} marginLeft={{lg:"100px",md:"70px", base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}  boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" padding={20}>
        <Text textAlign="center" fontSize={30} fontWeight={600}>Deluxe Room</Text>
        <Flex justifyContent="space-between" direction={{lg:"row",md:"column", base:"column"}} alignItems="center" alignContent="center" gap={{lg:"100px",md:"50px", base:"30px"}}>
       <VStack  p={5}  >
@@ -408,7 +408,7 @@ const RoomDetails = () => {
 
                       {/* Double-Bed-Room */}
                       <Box bg="#f4f4f4" paddingTop={{lg:"50px",md:"30px", base:"10px"}} paddingBottom={{lg:"50px",md:"30px", base:"10px"}}>
-       <Flex marginTop={90} direction="column" gap={5} marginLeft={{lg:"100px",md:"70px", base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}  boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" padding={20}>
+       <Flex marginTop={90} borderRadius={20} direction="column" gap={5} marginLeft={{lg:"100px",md:"70px", base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}  boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" padding={20}>
        <Text textAlign="center" fontSize={30} fontWeight={600}>Superior Room</Text>
        <Flex justifyContent="space-between" direction={{lg:"row",md:"column", base:"column"}} alignItems="center" alignContent="center" gap={{lg:"100px",md:"50px", base:"30px"}}>
       <VStack  p={5}  >

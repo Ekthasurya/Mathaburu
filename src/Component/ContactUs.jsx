@@ -8,16 +8,16 @@ import WhatsAppButton from './Whatapp'
 
 const ContactUs = () => {
   return (
-    <Flex h={{lg:"600px",md:"810px",base:"810px"}}  bgImage="url('./Image/footer1.jpg')" bgPosition="center" bgRepeat="no-repeat" bgSize="cover"
+    <Flex h={{lg:"600px",md:"810px",base:"810px"}} style={{ fontFamily : "EB Garamond"}}  bgImage="url('./Image/footer1.jpg')" bgPosition="center" bgRepeat="no-repeat" bgSize="cover"
         id='contact' direction="column" gap={10}>
-          <Text fontSize={45} fontWeight={600}>The MahatoBuru</Text>
+          <Text fontSize={45} fontWeight={600}>The Matha Buru</Text>
           <Flex direction={{lg:"row",md:"column",base:"column"}}  justifyContent="center" alignItems="center" gap={{lg:"150px",md:"10px",base:"20px"}}>
 
             <Flex direction="column" border="1px solid" p={5} w={{lg:"300px",md:"250px",base:"200px"}}  h={{lg:"250px",md:"230px",base:"220px"}} gap={3}>
               <Text fontSize={{lg:"25px",md:"25px",base:"18px"}} fontWeight={600}>Reservations Office</Text>
               <Flex gap={2}><FaLocationDot size={20}/>
                <Box>
-               <Text fontSize={ {lg:"16px",md:"14px",base:"14px"}}> FOREST, Baghmundi - Purulia Rd, SONKUPI, Matha, Purulia, West Bengal 723152</Text>
+               <Text fontSize={ {lg:"16px",md:"14px",base:"14px"}}> Matha FOREST, Baghmundi - Purulia Rd, SONKUPI, Matha, Purulia, West Bengal 723152</Text>
               </Box>
               </Flex>
               

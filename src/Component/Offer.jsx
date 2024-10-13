@@ -27,7 +27,7 @@ const Offer = () => {
   return (
     <Box bg="#f4f4f4" paddingTop={{lg:"50px",md:"30px", base:"10px"}} paddingBottom={{lg:"50px",md:"30px", base:"10px"}}>
     <Flex direction="column" borderRadius={20} gap={5} id='offer'   marginLeft={{lg:"100px",md:"70px", base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}   boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" padding={20}>
-        <Text textAlign="center" fontWeight={600} fontSize={45}>Our Offerings</Text>
+        <Text textAlign="center" fontWeight={600} fontSize={{lg:"45px",md:"30px", base:"20px"}}>Our Offerings</Text>
 
 <Flex justifyContent="center">
  <Grid  templateColumns={{lg:'repeat(4, 1fr)',md:'repeat(2, 1fr)',base:'repeat(2, 1fr)'}}  gap={{lg:"14px",md:"14px", base:"8px"}}>

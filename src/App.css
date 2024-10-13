@@ -507,14 +507,32 @@
   }
 
   .cards .card {
-    padding: 5px;
-    height: 250px;
-    width: 150px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 300px;
+    width: 130px;
+    gap: 10px;
     border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
     box-shadow: 15px 15px 30px #bebebe,
     -15px -15px 30px #ffffff;
-
   }
+  
+  .cards .card p.tip {
+    font-size: 1em;
+    font-weight: 700;
+  }
+  
+  .cards .card p.second-text {
+    font-size: .7em;
+  }
+  
   .cards .card:hover {
     transform: scale(1.2, 1.2);
    
@@ -524,10 +542,9 @@
  }
   
   .cards:hover > .card:not(:hover) {
-    filter: blur(5px);
+    filter: blur(10px);
     transform: scale(0.9, 0.9);
   }
-
   /* button */
   .animated-button {
     width: 150px;
@@ -545,6 +562,7 @@
     font-weight: 600;
     color: #2b3433;
     box-shadow: 0 0 0 2px #2b3433;
+    background-color: #c8c8c8;
     cursor: pointer;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -621,24 +639,28 @@
   .Abutton{
     font-size: 12px;
   }
- 
+
   .Ccard{
-    width: 15rem;
-    height: 10rem ;
+    width: 17rem;
+    height: 5rem ;
+    object-fit: cover;
   }
   .Cimage{
-    width:  15rem;
-    height: 10rem;
+    width:  17rem;
+    height: 5rem;
+    object-fit: cover;
   }
 
   .Ccard2{
-    width:  15rem;
-    height: 10rem;
+    width:  17rem;
+    height: 5rem;
+    object-fit: cover;
    
   }
   .Cimage2{
-    width:  15rem;
-    height: 10rem;
+    width:  17rem;
+    height: 5rem;
+    object-fit: cover;
   }
 
   .Ccard1{
@@ -652,24 +674,25 @@
   .Ccard:hover {
     transform: translateY(-0.5rem);
   
-    border-radius: 2.5rem 0 2.5rem 0;
+    border-radius: 1.5rem 0 1.5rem 0;
    }
    .Cimage:hover {
     transform: translateY(-0.5rem);
   
-    border-radius: 2.5rem 0 2.5rem 0;
+    border-radius: 1.5rem 0 1.5rem 0;
    }
   
    .Ccard2:hover {
     transform: translateY(-0.5rem);
   
-    border-radius:0 2.5rem 0 2.5rem;
+    border-radius:0 1.5rem 0 1.5rem;
    }
    .Cimage2:hover {
     transform: translateY(-0.5rem);
   
-    border-radius: 0 2.5rem 0 2.5rem ;
+    border-radius: 0 1.5rem 0 1.5rem ;
    }
+ 
 
    .Ccard1 {
     padding: 10px;
@@ -677,33 +700,76 @@
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
    }
-   .Ocard{
-    width: 150px;
-    height: 140px;
-    border-radius: 10px;
-   }
-   .Oimg{
-    width: 150px;
-    height: 140px;
-    border-radius: 10px;
-   }
+   .Ocard {
+    box-sizing: border-box;
+    width: 140px;
+    height: 130px;
+    background: rgba(217, 217, 217, 0.58);
+    /* border: 1px solid white; */
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    /* color: black; */
+  }
+  
+  .Ocard:hover {
+    /* border: 1px solid black; */
+    transform: scale(1.05);
+  }
+  
+  .Ocard:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }
+  
+  .Oimg{
+    height:140px;
+    width:130px;
+    border-radius:17px
+  }
    
-
-   .Dcard{
+   .Dcard {
+    box-sizing: border-box;
     width: 200px;
     height: 120px;
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
     border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
   }
-  .Dimg{
-    width: 200px;
-    height: 120px;
-    border-radius: 10px;
-  }
+  
   .Dcard:hover {
     border: 1px solid black;
     transform: scale(1.05);
   }
-
+  
+  .Dcard:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }
+  .Dimg{
+    border-radius:10px;
+    width:200px;
+    height:120px;
+  }
+  
+ 
   .singup {
     color: #000;
     text-transform: uppercase;
@@ -719,7 +785,7 @@
     justify-content: center;
     align-items: center;
     min-height: 350px;
-    width: 300px;
+    width: 280px;
     flex-direction: column;
     gap: 35px;
     border-radius: 15px;
