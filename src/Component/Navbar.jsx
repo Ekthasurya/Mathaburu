@@ -67,15 +67,15 @@ function BasicExample() {
   left={0}
   line-height= "50px"
    >
-  < Link to="#home"><Text><IoHome size={20} /></Text></Link>
-  <Link to="#home"> <Text>Home</Text></Link>
-  < Link to="#about"> <Text>About</Text></Link>
-  <Link to="#room"><Text>Rooms</Text></Link>
-  <Link to="#culture"><Text>Culture</Text></Link>
-  <Link to="#spotlight"><Text>Spotlight</Text></Link>
-  <Link to="#dyning"><Text>Dyning</Text></Link>
-  <Link to="#offer"><Text>Offer</Text></Link>
-  <Link to="#contact"><Text>Contact Us</Text></Link>
+  < Link to="/#home"><Text><IoHome size={20} /></Text></Link>
+  <Link to="/#home"> <Text>Home</Text></Link>
+  < Link to="/#about"> <Text>About</Text></Link>
+  <Link to="/#room"><Text>Rooms</Text></Link>
+  <Link to="/#culture"><Text>Culture</Text></Link>
+  <Link to="/#spotlight"><Text>Spotlight</Text></Link>
+  <Link to="/#dyning"><Text>Dyning</Text></Link>
+  <Link to="/#offer"><Text>Offer</Text></Link>
+  <Link to="/#contact"><Text>Contact Us</Text></Link>
 </Box>
 ) : null}
 </Box>
