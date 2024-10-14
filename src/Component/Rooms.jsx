@@ -34,7 +34,7 @@ const Rooms = () => {
         <Box border="1px solid black" p={3}>
              <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}} >2 adults | 1 child below 7</Text>
                 <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Ac Cottege</Text>
-             <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Starting From 2500 ₹</Text>
+             <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Starting From 2200 ₹</Text>
         </Box>     
   </Flex>       
   </div>
@@ -45,7 +45,7 @@ const Rooms = () => {
         <Box border="1px solid black" p={3}>
              <Text color="black"  fontSize={{lg:"18px", md:"14px",base:"10px"}}>2 adults | 1 child below 7</Text>
                 <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Non-Ac Cottege</Text>
-             <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Starting From 1700 ₹</Text>
+             <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Starting From 1600 ₹</Text>
         </Box>     
 </Flex>       
     </div> 
@@ -55,7 +55,7 @@ const Rooms = () => {
     <Flex direction="column" gap={10}>
     <img src="./Image/delux.jpg" alt="" />
         <Box border="1px solid black" p={3}>
-             <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>2 adults | 1 child below 7</Text>
+             <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>4 adults | 2 child below 7</Text>
                 <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Superior Room</Text>
              <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Starting From 2100 ₹</Text>
         </Box>     
