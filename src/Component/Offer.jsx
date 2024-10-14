@@ -51,7 +51,7 @@ const Offer = () => {
 <div class="Ocard">
     <img src="./Image/parking.jpg" className='Oimg' alt="" />
 </div>
-<Text textAlign="center">Car Prking</Text>
+<Text textAlign="center">Car Parking</Text>
 </Flex>
 
 <Flex direction="column" gap={3}>
