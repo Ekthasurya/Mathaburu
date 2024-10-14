@@ -63,6 +63,17 @@ const images3 = [
 ];
 
 const RoomDetails = () => {
+  const phoneNumber = "7384804148"; 
+    const message = "Hello! I would like to chat with you.";
+     // Pre-filled message
+     const countryCode = "91";
+  
+    const handleWhatsAppClick = () => {
+      const whatsappUrl = `https://wa.me/${countryCode}${phoneNumber}?text=${encodeURIComponent(
+        message
+      )}`;
+      window.open(whatsappUrl, "_blank");
+    };
 
   useEffect(() => {
     preloadImages([
@@ -269,7 +280,7 @@ const RoomDetails = () => {
         </Button>
         </Flex>
     </VStack>
-    <Flex gap={4} direction="column" w={{lg:"600px",md:"600px", base:"300px"}}>
+    <Flex gap={4} p={5}  direction="column" w={{lg:"600px",md:"600px", base:"300px"}}>
     <Text fontSize={24}> Features:</Text>
     <Flex gap={2}><SiTicktick size={20} /> <Text>Cozy queen-sized bed</Text> </Flex> 
     <Flex gap={2}><SiTicktick size={20} /> <Text>Ac</Text> </Flex> 
@@ -278,12 +289,9 @@ const RoomDetails = () => {
     <Flex gap={2}><SiTicktick size={20} /> <Text>Free 24*7 Wi-Fi</Text> </Flex> 
     <Flex gap={2}><SiTicktick size={20} /> <Text>Ensuite bathroom with complimentary toiletries</Text> </Flex>
     <Flex gap={2}><SiTicktick size={20} /> <Text>Perfect for solo travelers or couples, our Standard Room provides all the essentials for a comfortable stay with a beautiful view of the surrounding hills.</Text> </Flex> 
-    
-    
-    
-    
-    
-    
+    <Flex justifyContent="center">
+    <button class="enter" onClick={handleWhatsAppClick}>Book Now</button>
+    </Flex>
   </Flex>
 
     </Flex>
@@ -331,7 +339,7 @@ const RoomDetails = () => {
         </Button>
         </Flex>
     </VStack>
-    <Flex direction="column" gap={4} w={{lg:"600px",md:"600px", base:"300px"}}>
+    <Flex direction="column" p={5} gap={4} w={{lg:"600px",md:"600px", base:"300px"}}>
     <Text fontSize={24}> Features:</Text>
     <Flex gap={2}><SiTicktick size={20} /> <Text>Cozy queen-sized bed</Text> </Flex>  
     <Flex gap={2}><SiTicktick size={20} /> <Text>Beautiful hillside view</Text> </Flex> 
@@ -339,7 +347,9 @@ const RoomDetails = () => {
     <Flex gap={2}><SiTicktick size={20} /> <Text>Free 24*7 Wi-Fi</Text> </Flex> 
     <Flex gap={2}><SiTicktick size={20} /> <Text>Ensuite bathroom with complimentary toiletries</Text> </Flex>
     <Flex gap={2}><SiTicktick size={20} /> <Text>Perfect for solo travelers or couples, our Standard Room provides all the essentials for a comfortable stay with a beautiful view of the surrounding hills.</Text> </Flex> 
-   
+    <Flex justifyContent="center">
+    <button class="enter" onClick={handleWhatsAppClick}>Book Now</button>
+    </Flex>
   </Flex>
 
     </Flex>
@@ -388,7 +398,7 @@ const RoomDetails = () => {
         </Button>
         </Flex>
     </VStack>
-    <Flex direction="column" gap={4} w={{lg:"600px",md:"600px", base:"300px"}}>
+    <Flex direction="column" p={5} gap={4} w={{lg:"600px",md:"600px", base:"300px"}}>
     <Text fontSize={24}> Features:</Text>
     <Flex gap={2}><SiTicktick size={20} /> <Text>King-sized bed with premium bedding</Text> </Flex> 
     <Flex gap={2}><SiTicktick size={20} /> <Text>Beautiful hillside view</Text> </Flex> 
@@ -398,6 +408,9 @@ const RoomDetails = () => {
     <Flex gap={2}><SiTicktick size={20} /> <Text>Ensuite bathroom with complimentary toiletries</Text> </Flex>
     <Flex gap={2}><SiTicktick size={20} /> <Text>Our Deluxe Rooms offer a luxurious space with a stunning view. Ideal for couples or small families, these rooms blend elegance with the natural beauty of the hills.</Text> </Flex> 
     
+    <Flex justifyContent="center">
+    <button class="enter" onClick={handleWhatsAppClick}>Book Now</button>
+    </Flex>
 
     
   </Flex>
@@ -447,7 +460,7 @@ const RoomDetails = () => {
         </Button>
         </Flex>
     </VStack>
-    <Flex direction="column" gap={4} w={{lg:"600px",md:"600px", base:"300px"}}>
+    <Flex direction="column" p={5} gap={4} w={{lg:"600px",md:"600px", base:"300px"}}>
     <Text fontSize={24}> Features:</Text>
     <Flex gap={2}><SiTicktick size={20} />  <Text>King-sized bed or twin beds</Text> </Flex> 
     <Flex gap={2}><SiTicktick size={20} /> <Text>Beautiful hillside view</Text> </Flex> 
@@ -456,6 +469,10 @@ const RoomDetails = () => {
     <Flex gap={2}><SiTicktick size={20} /> <Text>Spacious bathroom with a rain shower</Text> </Flex> 
     <Flex gap={2}><SiTicktick size={20} /> <Text>Ensuite bathroom with complimentary toiletries</Text> </Flex>
     <Flex gap={2}><SiTicktick size={20} /> <Text>A step up in luxury, the Superior Room offers additional space, breathtaking views, and premium amenities for those looking to unwind in style.</Text> </Flex> 
+     
+    <Flex justifyContent="center">
+    <button class="enter" onClick={handleWhatsAppClick}>Book Now</button>
+    </Flex>
 
   </Flex>
 

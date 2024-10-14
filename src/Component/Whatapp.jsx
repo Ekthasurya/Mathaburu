@@ -3,7 +3,7 @@ import { Button } from "@chakra-ui/react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "8918253874"; // Replace with the actual number
+  const phoneNumber = "7384804148"; 
   const message = "Hello! I would like to chat with you.";
    // Pre-filled message
    const countryCode = "91";

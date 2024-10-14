@@ -14,7 +14,7 @@ const Dyning = () => {
         <Flex id='smcol' direction={{lg:"row",md:"column",base:"column"}} justifyContent="center" alignContent="center" alignItems="center" gap={10}>
         <Flex direction="column" gap={3}>
         <div class="Dcard">
-            <img src="./Image/food1.jpg" className='Dimg' alt="" />
+            <img src="./Image/food2.jpg" className='Dimg' alt="" />
          </div>
          <div>
          <Text textAlign="center">Breakfast</Text>
@@ -22,7 +22,7 @@ const Dyning = () => {
          </Flex>
          <Flex direction="column" gap={3}>
          <div class="Dcard">
-            <img src="./Image/food2.jpg" className='Dimg' alt="" />
+            <img src="./Image/food1.jpg" className='Dimg' alt="" />
          </div>
          <div>
          <Text textAlign="center">Lunch</Text>

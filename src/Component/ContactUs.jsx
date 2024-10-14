@@ -8,7 +8,7 @@ import WhatsAppButton from './Whatapp'
 
 const ContactUs = () => {
   return (
-    <Flex h={{lg:"600px",md:"810px",base:"810px"}} style={{ fontFamily : "EB Garamond"}}  bgImage="url('./Image/footer1.jpg')" bgPosition="center" bgRepeat="no-repeat" bgSize="cover"
+    <Flex h={{lg:"600px",md:"820px",base:"820px"}} style={{ fontFamily : "EB Garamond"}}  bgImage="url('./Image/footer1.jpg')" bgPosition="center" bgRepeat="no-repeat" bgSize="cover"
         id='contact' direction="column" gap={10}>
           <Text fontSize={45} fontWeight={600}>The Matha Buru</Text>
           <Flex direction={{lg:"row",md:"column",base:"column"}}  justifyContent="center" alignItems="center" gap={{lg:"150px",md:"10px",base:"20px"}}>
