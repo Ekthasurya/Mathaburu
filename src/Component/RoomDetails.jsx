@@ -438,7 +438,7 @@ const RoomDetails = () => {
        
     
 
-      {/* Slider of Images */}
+      {/* slider */}
       <SimpleGrid columns={4} spacing={4} >
         {images4.slice(currentIndex4, currentIndex4 + imagesPerPage4).map((img4, index4) => (
           <Image
