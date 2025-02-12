@@ -41,9 +41,9 @@ const images2 = [
 ];
 
 const images4 = [
-  "./Image/Double-Bed-Room/delux.jpg",
-  "./Image/Double-Bed-Room/DSC_0594.jpg",
-  "./Image/Double-Bed-Room/DSC_0598.jpg",
+  "https://res.cloudinary.com/dhd5do52g/image/upload/v1734720757/photo1_andt5j.jpg",
+  "https://res.cloudinary.com/dhd5do52g/image/upload/v1734720782/photo2_wbqzgb.jpg",
+  "https://res.cloudinary.com/dhd5do52g/image/upload/v1734720963/photo5_ftbakx.jpg",
   "./Image/Double-Bed-Room/DSC_0685.jpg",
   "./Image/Double-Bed-Room/DSC_0686.jpg",
   "./Image/Double-Bed-Room/DSC_0687.jpg",
@@ -53,8 +53,8 @@ const images4 = [
 ];
 
 const images3 = [
-  "./Image/Single-Bed/delux.jpg",
-  "./Image/Single-Bed/DSC_0588.jpg",
+  "https://res.cloudinary.com/dhd5do52g/image/upload/v1734720782/photo2_wbqzgb.jpg",
+  "https://res.cloudinary.com/dhd5do52g/image/upload/v1734720757/photo1_andt5j.jpg",
   "./Image/Single-Bed/DSC_0667.jpg",
   "./Image/Single-Bed/DSC_0668.jpg",
   "./Image/Single-Bed/DSC_0672.jpg",
@@ -360,7 +360,7 @@ const RoomDetails = () => {
 
      <Box bg="#f4f4f4" paddingTop={{lg:"50px",md:"30px", base:"10px"}} paddingBottom={{lg:"50px",md:"30px", base:"10px"}}>
        <Flex marginTop={90} borderRadius={20} direction="column" gap={5} marginLeft={{lg:"100px",md:"70px", base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}  boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" padding={20}>
-       <Text textAlign="center" fontSize={30} fontWeight={600}>Deluxe Room</Text>
+       <Text textAlign="center" fontSize={30} fontWeight={600}>Single Bed Mat House</Text>
        <Flex justifyContent="space-between" direction={{lg:"row",md:"column", base:"column"}} alignItems="center" alignContent="center" gap={{lg:"100px",md:"50px", base:"30px"}}>
       <VStack  p={5}  >
       {/* Main Image Display Box */}
@@ -422,7 +422,7 @@ const RoomDetails = () => {
                       {/* Double-Bed-Room */}
                       <Box bg="#f4f4f4" paddingTop={{lg:"50px",md:"30px", base:"10px"}} paddingBottom={{lg:"50px",md:"30px", base:"10px"}}>
        <Flex marginTop={90} borderRadius={20} direction="column" gap={5} marginLeft={{lg:"100px",md:"70px", base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}  boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" padding={20}>
-       <Text textAlign="center" fontSize={30} fontWeight={600}>Superior Room</Text>
+       <Text textAlign="center" fontSize={30} fontWeight={600}>Double Bed Mat House</Text>
        <Flex justifyContent="space-between" direction={{lg:"row",md:"column", base:"column"}} alignItems="center" alignContent="center" gap={{lg:"100px",md:"50px", base:"30px"}}>
       <VStack  p={5}  >
       {/* Main Image Display Box */}

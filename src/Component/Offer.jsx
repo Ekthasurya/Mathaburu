@@ -42,7 +42,7 @@ const Offer = () => {
 
 <Flex direction="column" gap={3}>
 <div class="Ocard">
-    <img src="./Image/Single-Bed/delux.jpg" className='Oimg' alt="" />
+    <img src="https://res.cloudinary.com/dhd5do52g/image/upload/v1734720824/photo4_qdsaql.jpg" className='Oimg' alt="" />
 </div>
 <Text textAlign="center">Free Drivers Room</Text>
 </Flex>

@@ -53,10 +53,10 @@ const Rooms = () => {
     
     <div class="card green">
     <Flex direction="column" gap={10}>
-    <img src="./Image/delux.jpg" alt="" />
+    <img src="https://res.cloudinary.com/dhd5do52g/image/upload/v1734720782/photo2_wbqzgb.jpg" alt="" />
         <Box border="1px solid black" p={3}>
              <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>4 adults | 2 child below 7</Text>
-                <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Superior Room</Text>
+                <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Single Bed Mat House</Text>
              <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Starting From 2100 ₹</Text>
         </Box>     
    </Flex>       
@@ -67,10 +67,10 @@ const Rooms = () => {
     
     <div class="card green">
     <Flex direction="column" gap={10}>
-    <img src="./Image/delux-single-bed.jpg" alt="" />
+    <img src="https://res.cloudinary.com/dhd5do52g/image/upload/v1734720757/photo1_andt5j.jpg" alt="" />
         <Box border="1px solid black" p={3}>
              <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>2 adults | 1 child below 7</Text>
-                <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Deluxe Room</Text>
+                <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Double Bed Mat House</Text>
              <Text color="black" fontSize={{lg:"18px", md:"14px",base:"10px"}}>Starting From 1400 ₹</Text>
         </Box>     
 </Flex>       
