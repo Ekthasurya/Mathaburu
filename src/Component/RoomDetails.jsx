@@ -473,7 +473,7 @@ const RoomDetails = () => {
     <Flex justifyContent="center">
     <button class="enter" onClick={handleWhatsAppClick}>Book Now</button>
     </Flex>
- {/* fffff */}
+
   </Flex>
 
     </Flex>
