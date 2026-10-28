@@ -1,57 +1,93 @@
-import { Box, Flex,Text } from '@chakra-ui/react'
-import React from 'react'
-import WhatsAppButton from './Whatapp'
+import React, { useState } from 'react';
 
-const Booking = () => {
-    const phoneNumber = "7384804148"; 
-    const message = "Hello! I would like to chat with you.";
-     // Pre-filled message
-     const countryCode = "91";
-  
-    const handleWhatsAppClick = () => {
-      const whatsappUrl = `https://wa.me/${countryCode}${phoneNumber}?text=${encodeURIComponent(
-        message
-      )}`;
-      window.open(whatsappUrl, "_blank");
-    };
+export default function Booking() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [msg, setMsg] = useState('');
+
+  const phoneNumber = "7384804148";
+  const defaultMessage = "Hello! I would like to chat with you.";
+  const countryCode = "91";
+
+  const handleWhatsAppClick = (e) => {
+    e.preventDefault();
+    // Keep existing WhatsApp behavior
+    const whatsappUrl = `https://wa.me/${countryCode}${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
-    
-        
-
-<Box bg="#f4f4f4" paddingTop={{lg:"50px",md:"30px", base:"10px"}} paddingBottom={{lg:"50px",md:"30px", base:"10px"}}>
-<Flex justifyContent="center" borderRadius={20}  gap={{lg:"400px",md:"200px", base:"100px"}} alignItems="center" direction={{lg:"row",md:"row", base:"column"}}   id='booking' marginLeft={{lg:"100px",md:"70px", base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}  boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" padding={{lg:"20px",md:"10px", base:"20px"}} >
-
-<div class="container" style={{display:"flex", justifyContent:"center"}}>
-        <div class="icard" >
-            <a class="singup">Enquiry</a>
-            <div class="inputBox1">
-                <input type="text" required="required"/>
-                <span class="user">Name</span>
-            </div>
-
-            <div class="inputBox">
-                <input type="text" required="required"/>
-                <span>Email</span>
-            </div>
-
-            <div class="inputBox">
-                <input type="password" required="required"/>
-                <span>Message</span>
-            </div>
-
-            <button class="enter" onClick={handleWhatsAppClick}>Enter</button>
-
+    <section id="booking" className="bg-white py-20 md:py-28">
+      <div className="section-inner max-w-2xl">
+        <div className="text-center mb-12">
+          <p className="eyebrow text-muted mb-3">Reservations &amp; Queries</p>
+          <h2 className="font-garamond text-3xl md:text-4xl font-semibold text-ink mb-4">
+            Send an Enquiry
+          </h2>
+          <p className="text-[18px] text-muted">
+            Have questions about room availability or special requests? Drop your details below to connect directly with us.
+          </p>
         </div>
-    </div>
-    <Flex direction="column" gap={4}>
-        <Text fontSize={25} fontWeight={600} textAlign="center">Contact Us</Text>
-        <WhatsAppButton/>
-    </Flex>
-    
-    </Flex>
-    </Box>
 
-  )
+        <form
+          onSubmit={handleWhatsAppClick}
+          className="bg-paper border border-hairline p-8 md:p-10 flex flex-col gap-6"
+        >
+          <div>
+            <label htmlFor="enquiry-name" className="form-label">
+              Name
+            </label>
+            <input
+              id="enquiry-name"
+              type="text"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="form-input"
+              placeholder="Your full name"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="enquiry-email" className="form-label">
+              Email
+            </label>
+            <input
+              id="enquiry-email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="form-input"
+              placeholder="name@example.com"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="enquiry-message" className="form-label">
+              Message
+            </label>
+            <textarea
+              id="enquiry-message"
+              required
+              rows={4}
+              value={msg}
+              onChange={(e) => setMsg(e.target.value)}
+              className="form-input resize-y"
+              placeholder="Tell us your dates, room requirements, or questions..."
+            />
+          </div>
+
+          <div className="pt-2">
+            <button
+              type="submit"
+              className="btn-primary w-full text-center"
+            >
+              Send enquiry on WhatsApp
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  );
 }
-
-export default Booking

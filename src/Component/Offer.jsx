@@ -1,103 +1,50 @@
-import { Box, Flex,Grid,Text } from '@chakra-ui/react'
-import React, { useEffect } from 'react'
+import React from 'react';
 
-const preloadImages = (urls) => {
-    urls.forEach(url => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.href = url;
-      link.as = 'image';
-      document.head.appendChild(link);
-    });
-  };
+const offerings = [
+  { img: './Image/spotlight/DSC_0608.jpg',                                                      label: 'Mini Childrens Park' },
+  { img: 'https://res.cloudinary.com/dhd5do52g/image/upload/v1734720824/photo4_qdsaql.jpg',    label: 'Free Drivers Room' },
+  { img: './Image/parking.jpg',                                                                  label: 'Car Parking' },
+  { img: './Image/roomservice.jpg',                                                              label: '24 x 7 Room Service' },
+  { img: './Image/tourguide.jpg',                                                               label: 'Tour Guide' },
+  { img: './Image/carService.webp',                                                             label: 'Car Service' },
+  { img: 'https://www.giggsmeat.com/wp-content/uploads/2021/04/NohFpw9UaY-min.jpg',            label: 'Barbique' },
+  { img: './Image/bonfire.jpg',                                                                  label: 'Bonfire' },
+];
 
-const Offer = () => {
-    useEffect(() => {
-        preloadImages([
-         "./Image/spotlight/DSC_0608.jpg",
-         "./Image/Single-Bed/delux.jpg",
-         "./Image/parking.jpg",
-         "./Image/roomservice.jpg",
-         "./Image/tourguide.jpg",
-         "./Image/carService.webp",
-         "https://www.giggsmeat.com/wp-content/uploads/2021/04/NohFpw9UaY-min.jpg",
-         "./Image/bonfire.jpg"
-        ]);
-      }, []);
+export default function Offer() {
   return (
-    <Box bg="#f4f4f4" paddingTop={{lg:"50px",md:"30px", base:"10px"}} paddingBottom={{lg:"50px",md:"30px", base:"10px"}}>
-    <Flex direction="column" borderRadius={20} gap={5} id='offer'   marginLeft={{lg:"100px",md:"70px", base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}   boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" padding={20}>
-        <Text textAlign="center" fontWeight={600} fontSize={{lg:"45px",md:"30px", base:"20px"}}>Our Offerings</Text>
+    <section id="offer" className="bg-white py-20 md:py-28">
+      <div className="section-inner">
+        <p className="eyebrow text-muted mb-4">Amenities &amp; Services</p>
+        <h2 className="font-garamond text-3xl md:text-4xl font-semibold text-ink mb-12">
+          Our Offerings
+        </h2>
 
-<Flex justifyContent="center">
- <Grid  templateColumns={{lg:'repeat(4, 1fr)',md:'repeat(2, 1fr)',base:'repeat(2, 1fr)'}}  gap={{lg:"14px",md:"14px", base:"8px"}}>
- 
-<Flex direction="column" gap={3}>
-<div class="Ocard">
-    <img src="./Image/spotlight/DSC_0608.jpg" className='Oimg'  alt="" />
-</div>
-<Text textAlign="center">Mini Childrens Park</Text>
-</Flex>
-  
-
-<Flex direction="column" gap={3}>
-<div class="Ocard">
-    <img src="https://res.cloudinary.com/dhd5do52g/image/upload/v1734720824/photo4_qdsaql.jpg" className='Oimg' alt="" />
-</div>
-<Text textAlign="center">Free Drivers Room</Text>
-</Flex>
-
-<Flex direction="column" gap={3}>
-<div class="Ocard">
-    <img src="./Image/parking.jpg" className='Oimg' alt="" />
-</div>
-<Text textAlign="center">Car Parking</Text>
-</Flex>
-
-<Flex direction="column" gap={3}>
-<div class="Ocard">
-    <img src="./Image/roomservice.jpg" className='Oimg' alt="" />
-</div>
-<Text textAlign="center">24 x 7 Room Service</Text>
-</Flex>
-
-<Flex direction="column" gap={3}>
-<div class="Ocard">
-    <img src="./Image/tourguide.jpg" className='Oimg' alt="" />
-</div>
-<Text textAlign="center">Tour Guide</Text>
-</Flex>
-
-<Flex direction="column" gap={3}>
-<div class="Ocard">
-    <img src="./Image/carService.webp" className='Oimg' alt="" />
-
-</div>
-<Text textAlign="center">Car Service</Text>
-</Flex>
-
-<Flex direction="column" gap={3}>
-<div class="Ocard">
-    <img src="https://www.giggsmeat.com/wp-content/uploads/2021/04/NohFpw9UaY-min.jpg" className='Oimg' alt="" />
-</div>
-<Text textAlign="center">Barbique</Text>
-</Flex>
-
-<Flex direction="column" gap={3}>
-<div class="Ocard">
-    <img src="./Image/bonfire.jpg" className='Oimg' alt="" />
-</div>
-<Text textAlign="center">Bonfire</Text>
-</Flex>
-
-</Grid>
-</Flex>
-
-
-
-    </Flex>
-    </Box>
-  )
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {offerings.map((item) => (
+            <div
+              key={item.label}
+              className="bg-paper border border-hairline overflow-hidden flex flex-col"
+            >
+              <div className="border-b border-hairline">
+                <img
+                  src={item.img}
+                  alt={item.label}
+                  width={300}
+                  height={225}
+                  loading="lazy"
+                  className="w-full aspect-[4/3] object-cover"
+                />
+              </div>
+              <div className="p-3 text-center">
+                <p className="text-[17px] font-medium text-ink">
+                  {item.label}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
-
-export default Offer

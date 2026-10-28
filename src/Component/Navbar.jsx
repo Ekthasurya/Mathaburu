@@ -1,85 +1,133 @@
-import { Box, Flex, IconButton, Text, useDisclosure } from '@chakra-ui/react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
-import { IoHome } from 'react-icons/io5';
-import { Link, useLocation } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+import { FaWhatsapp } from 'react-icons/fa';
 
-function BasicExample() {
+const NAV_LINKS = [
+  { to: '/',            label: 'Home',        end: true },
+  { to: '/about',       label: 'About' },
+  { to: '/rooms',       label: 'Rooms' },
+  { to: '/dining',      label: 'Dining' },
+  { to: '/experiences', label: 'Experiences' },
+  { to: '/activities',  label: 'Activities' },
+  { to: '/gallery',     label: 'Gallery' },
+  { to: '/offers',      label: 'Offers' },
+  { to: '/contact',     label: 'Contact' },
+];
+
+const WA_URL = `https://wa.me/917384804148?text=${encodeURIComponent('Hello! I would like to book a stay at Matha Buru Hill Eco Resort.')}`;
+
+export default function Navbar() {
+  const [isOpen,   setIsOpen]   = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isHome = location.pathname === '/';
 
-  // Scroll to the section based on the hash in the URL when the component mounts
+  useEffect(() => { setIsOpen(false); window.scrollTo(0, 0); }, [location.pathname]);
+
   useEffect(() => {
-      if (location.hash) {
-          const element = document.querySelector(location.hash);
-          if (element) {
-              element.scrollIntoView({ behavior: 'smooth' });
-          }
-      }
-  }, [location]);
-  const { isOpen, onOpen, onClose } = useDisclosure();
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const barBg = isHome
+    ? scrolled ? 'bg-ink/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+    : 'bg-ink shadow-lg';
+
   return (
-    <Box>
-       
-    <Flex style={{ fontFamily : "EB Garamond"}} w={{lg:"100%",md:"100%",base:"100%"}} justifyContent={{lg:"center",md:"space-between",base:"space-between"}} h={70} fontSize={20} bg="#2b3433" color="white" fontWeight={400} alignItems="center"  paddingTop={10} position="fixed" top="0"
-      left="0"
-      right="0"
-      px={4}
-      py={3}
-      zIndex="1000"
-      gap={{lg:"5px",md:"none",base:"250px"}}
-      shadow="md">
+    <>
+      {/* ── Fixed bar ── */}
+      <header
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${barBg}`}
+        style={{ height: '72px' }}
+        role="banner"
+      >
+        <div className="section-inner w-full h-full flex items-center justify-between gap-4">
 
-       <Flex >
-        <img id='logo' src="./Image/logo.png" alt="logo" />
-       </Flex>
+          {/* Logo */}
+          <Link to="/" aria-label="Matha Buru home" className="flex items-center gap-3 flex-shrink-0">
+            <img src="./Image/logo.png" alt="Matha Buru logo" className="h-10 w-10 object-contain" />
+            <div className="hidden sm:block">
+              <p className="text-white font-garamond text-[15px] font-semibold leading-none tracking-wider">Matha Buru</p>
+              <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] leading-none mt-0.5">Hill Eco Resort</p>
+            </div>
+          </Link>
 
-        <IconButton bg="transparent" color="white"
-          size="md"
-          icon={ isOpen ?<IoMdClose size={20}/>:<IoMdMenu size={20}/>}
-          aria-label="Open Menu"
-          display={{ lg: 'none' }}
-          _hover={{ bg: 'none' }}
-          _active={{ bg: 'none' }}
-          _focus={{ boxShadow: 'none' }}
-          onClick={isOpen ? onClose : onOpen}
-        />
+          {/* Desktop nav */}
+          <nav className="hidden xl:flex items-center gap-5 flex-1 justify-center" aria-label="Main navigation">
+            {NAV_LINKS.map(l => (
+              <NavLink
+                key={l.to} to={l.to} end={l.end}
+                className={({ isActive }) =>
+                  `aurora-nav-link ${isActive ? 'text-white !border-white/60' : ''}`
+                }
+              >
+                {l.label}
+              </NavLink>
+            ))}
+          </nav>
 
-  <Flex as="nav" spacing={4} gap={6} display={{ base: 'none', lg: 'flex' }}>
+          {/* Book Now CTA */}
+          <Link
+            to="/booking"
+            className="hidden xl:inline-flex items-center gap-2 aurora-book-btn flex-shrink-0"
+          >
+            Book Now
+          </Link>
 
-       
-    < Link to="/#home"><Box p={1}><IoHome size={20} /></Box></Link>
-    <Link to="/#home"> <Text>Home</Text></Link>
-    < Link to="/#about"> <Text>About</Text></Link>
-    <Link to="/#room"><Text>Rooms</Text></Link>
-    <Link to="#culture"><Text>Culture</Text></Link>
-    <Link to="/#spotlight"><Text>Spotlight</Text></Link>
-    <Link to="/#dyning"><Text>Dining</Text> </Link>
-    <Link to="/#offer"><Text>Offer</Text></Link>
-    <Link to="/#booking"><Text>Enquiry</Text></Link>
-    <Link to="/#contact"><Text>Contact Us</Text></Link>
-      </Flex>
-    </Flex>
+          {/* WhatsApp — medium screens */}
+          <a href={WA_URL} target="_blank" rel="noreferrer"
+            className="hidden lg:inline-flex xl:hidden items-center gap-2 aurora-book-btn flex-shrink-0">
+            <FaWhatsapp size={15} /> Book
+          </a>
 
-{isOpen ? (
-  <Box p={7} display={{ lg: 'none',md:"flex",sm:"flex" }} flexDirection={{lg:"none", md:"column", sm:"column"}} bg="#2b3433" color="white" w="100%" paddingTop={75} justifyContent="center" alignContent="center" gap={2} alignItems="center" position= "fixed"
-  top={0}
-  left={0}
-  line-height= "50px"
-   >
-  < Link to="/#home"><Text><IoHome size={20} /></Text></Link>
-  <Link to="/#home"> <Text>Home</Text></Link>
-  < Link to="/#about"> <Text>About</Text></Link>
-  <Link to="/#room"><Text>Rooms</Text></Link>
-  <Link to="/#culture"><Text>Culture</Text></Link>
-  <Link to="/#spotlight"><Text>Spotlight</Text></Link>
-  <Link to="/#dyning"><Text>Dyning</Text></Link>
-  <Link to="/#offer"><Text>Offer</Text></Link>
-  <Link to="/#contact"><Text>Contact Us</Text></Link>
-</Box>
-) : null}
-</Box>
+          {/* Hamburger */}
+          <button
+            className="xl:hidden text-white p-1 ml-auto"
+            onClick={() => setIsOpen(v => !v)}
+            aria-expanded={isOpen}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isOpen ? <IoMdClose size={26} /> : <IoMdMenu size={26} />}
+          </button>
+        </div>
+      </header>
+
+      {/* ── Mobile drawer ── */}
+      <div
+        className={`fixed inset-0 z-40 bg-ink/98 backdrop-blur flex flex-col pt-[72px] transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+        aria-modal="true" role="dialog" aria-label="Navigation menu"
+      >
+        <nav className="flex flex-col divide-y divide-white/10 mt-4 overflow-y-auto">
+          {NAV_LINKS.map(l => (
+            <NavLink
+              key={l.to} to={l.to} end={l.end}
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `px-8 py-4 text-base uppercase tracking-widest transition-colors ${
+                  isActive ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'
+                }`
+              }
+            >
+              {l.label}
+            </NavLink>
+          ))}
+        </nav>
+        <div className="px-8 pt-6 pb-8 flex flex-col gap-3">
+          <Link to="/booking" onClick={() => setIsOpen(false)}
+            className="flex items-center justify-center gap-2 aurora-book-btn w-full py-4 text-base">
+            Book Now
+          </Link>
+          <a href={WA_URL} target="_blank" rel="noreferrer"
+            className="flex items-center justify-center gap-2 aurora-btn-ghost w-full py-4 text-base"
+            onClick={() => setIsOpen(false)}>
+            <FaWhatsapp size={18} /> WhatsApp
+          </a>
+        </div>
+      </div>
+    </>
   );
 }
-
-export default BasicExample;

@@ -1,83 +1,71 @@
-import { Box, Flex,Text ,Image,Button} from '@chakra-ui/react'
-import React, { useEffect } from 'react'
+const CULTURES = [
+  {
+    img: './Image/chownach.jpg',
+    alt: 'Chownach — Purulia Chhau dance performers in elaborate masks',
+    title: 'Chownach',
+    body: 'Purulia Chhau Nach is a vibrant and highly stylised form of the Chhau dance, originating from the Purulia district in West Bengal. Known for its elaborate masks, energetic martial movements and depictions of mythological stories from the Ramayana, Mahabharata and Puranas.',
+  },
+  {
+    img: './Image/patanach.jpg',
+    alt: 'Pata Nach — performers with Patachitra scroll paintings',
+    title: 'Pata Nach',
+    body: 'Pata Nach is a traditional folk performance combining dance, painting and storytelling. Performers use Patachitra scroll paintings to narrate stories from mythology or local folklore. As the scrolls are unravelled, dancers sing songs that explain the painted scenes.',
+    reverse: true,
+  },
+  {
+    img: './Image/santali.jpg',
+    alt: 'Santali dance — Santali tribal community performers',
+    title: 'Santali Dance',
+    body: "Santali dance is a vibrant folk tradition of the Santali tribal community, one of the largest indigenous groups in India. These dances are an integral part of Santali culture, performed during festivals, harvests, weddings and other communal celebrations.",
+  },
+  {
+    img: './Image/boul.jpg',
+    alt: 'Baul Sangeet — wandering minstrel with ektara',
+    title: 'Baul Sangeet',
+    body: "Baul Sangeet is a mystical folk music tradition from Bengal and Bangladesh. Bauls are wandering minstrels who use music to express spiritual experiences. Their songs blend Sufism, Vaishnavism and Tantric philosophies into a unique syncretic tradition.",
+    reverse: true,
+  },
+];
 
-const preloadImages = (urls) => {
-  urls.forEach(url => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.href = url;
-    link.as = 'image';
-    document.head.appendChild(link);
-  });
-};
-
-
-const Culture = () => {
-  useEffect(() => {
-    preloadImages(["./Image/chownach.jpg", 
-      "./Image/patanach.jpg",
-      "./Image/santali.jpg",
-      "./Image/boul.jpg"
-    ]);
-  }, []);
+export default function Culture() {
   return (
-  
-    <Box bg="#f4f4f4" paddingTop={{lg:"50px",md:"30px", base:"10px"}} paddingBottom={{lg:"50px",md:"30px", base:"10px"}}>
-    <Flex direction="column" gap={10} borderRadius={20}  id='culture' marginLeft={{lg:"100px",md:"70px", base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}} boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" p={{lg:"20px",md:"7px", base:"7px"}}  >
+    <section id="culture" className="bg-paper py-20 md:py-28">
+      <div className="section-inner">
+        <p className="eyebrow text-muted mb-4">Local culture</p>
+        <h2 className="font-garamond text-3xl md:text-4xl font-semibold text-ink mb-16">
+          Cultural Traditions
+        </h2>
 
-      <Text textAlign="center" fontSize={45} fontWeight={600}>Cultural</Text>
-      <Flex justifyContent="center" alignItems="center" gap={{lg:"50px",md:"30px", base:"15px"}}>
-    
-<div class="Ccard">
-  <img className='Cimage' src="./Image/chownach.jpg" alt="" />
-</div>
+        <div className="flex flex-col gap-0">
+          {CULTURES.map((item, i) => (
+            <div
+              key={item.title}
+              className={`grid grid-cols-1 md:grid-cols-2 border border-hairline
+                          ${i > 0 ? 'border-t-0' : ''}`}
+            >
+              {/* Image — always on top on mobile */}
+              <div className={`${item.reverse ? 'md:order-2' : 'md:order-1'} border-b border-hairline md:border-b-0 ${item.reverse ? 'md:border-l border-hairline' : 'md:border-r border-hairline'}`}>
+                <img
+                  src={item.img}
+                  alt={item.alt}
+                  width={640}
+                  height={427}
+                  loading="lazy"
+                  className="w-full aspect-[4/3] object-cover"
+                />
+              </div>
 
-<div class="Ccard1">
-  <Text fontWeight={600}  textAlign="center">Chownach</Text>
-  <p className='Ctext'>Purulia Chhau Nach (also spelled Chow Nach) is a vibrant and highly stylized form of the Chhau dance, originating from the Purulia district in the state of West Bengal, India. This traditional dance form is known for its elaborate masks, energetic martial movements, and the depiction of mythological stories, particularly from the Ramayana, Mahabharata, and Puranas</p>
-</div>
-
-      </Flex>
-
-      <Flex justifyContent="center" alignItems="center" gap={{lg:"50px",md:"30px", base:"15px"}}>
-
-      <div class="Ccard1">
-      <Text fontWeight={600} textAlign="center">Pata Nach</Text>
-      <p className='Ctext'>Pata Nach in Purulia is a traditional folk performance combining dance, painting, and storytelling. The performers use Patachitra (scroll paintings) to narrate stories, often from mythology or local folklore. As the scrolls are unraveled, the dancers sing songs that explain the painted scenes. Simple, graceful dance movements accompany the performance. It is an art form deeply rooted in the cultural heritage of West Bengal's Chitrakar community.</p>
+              {/* Text */}
+              <div className={`${item.reverse ? 'md:order-1' : 'md:order-2'} flex flex-col justify-center p-8 md:p-10 lg:p-14`}>
+                <h3 className="font-garamond text-2xl md:text-3xl font-semibold text-ink mb-4">
+                  {item.title}
+                </h3>
+                <p className="text-[18px] text-muted leading-relaxed">{item.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    
-    <div class="Ccard2">
-      <img className='Cimage2' src="./Image/patanach.jpg" alt="" />
-    </div>
-          </Flex>
-
-          <Flex justifyContent="center" alignItems="center" gap={{lg:"50px",md:"30px", base:"15px"}}>
-    
-    <div class="Ccard">
-      <img className='Cimage' src="./Image/santali.jpg" alt="" />
-    </div>
-    
-    <div class="Ccard1">
-      <Text fontWeight={600} textAlign="center">Santali Song and Dance</Text>
-      <p className='Ctext'>In Purulia, Santali songs and dances are an important part of the Santal tribe’s cultural and religious traditions. The songs often focus on themes like nature, love, and spirituality, accompanied by instruments like the Tumdak and Tamak. Santali dances feature rhythmic, energetic movements, with men and women dancing in circles or lines. The dancers wear colorful attire, with women adorned in beads and silver jewelry. These performances celebrate community, nature, and Santal heritage.</p>
-    </div>
-    
-          </Flex>
-    
-          <Flex justifyContent="center" alignItems="center" gap={{lg:"50px",md:"30px", base:"15px"}}>
-
-<div class="Ccard1">
-<Text fontWeight={600} textAlign="center">Boul Song</Text>
-<p className='Ctext'>Purulia Chhau Nach (also spelled Chow Nach) is a vibrant and highly stylized form of the Chhau dance, originating from the Purulia district in the state of West Bengal, India. This traditional dance form is known for its elaborate masks, energetic martial movements, and the depiction of mythological stories, particularly from the Ramayana, Mahabharata, and Puranas</p>
-</div>
-
-<div class="Ccard2">
-      <img className='Cimage2' src="./Image/boul.jpg" alt="" />
-    </div>
-    </Flex>
-    </Flex>
-   </Box>
-  )
+    </section>
+  );
 }
-
-export default Culture

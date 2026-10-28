@@ -1,3 +1,225 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "EB Garamond", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #2b3433;
+    background: #f5f1e8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "EB Garamond", Georgia, serif;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid #a4452c;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+
+  /* ──────────────────────────────────────────
+     AURORA DESIGN SYSTEM
+  ────────────────────────────────────────── */
+
+  /* ── Aurora Navbar Link ── */
+  .aurora-nav-link {
+    @apply text-[13.5px] text-white/75 uppercase tracking-[0.12em]
+           hover:text-white transition-colors duration-200
+           pb-0.5 border-b border-transparent hover:border-white/30;
+  }
+  .aurora-nav-link.active {
+    @apply text-white border-b border-white/60;
+  }
+
+  /* ── Aurora "Book Now" button ── */
+  .aurora-book-btn {
+    @apply inline-flex items-center gap-2 bg-white text-ink
+           px-5 py-2.5 text-[12.5px] uppercase tracking-widest font-semibold
+           cursor-pointer border border-white
+           transition-all duration-200
+           hover:bg-ink hover:text-white hover:border-white/40;
+    border-radius: 2px;
+  }
+
+  /* ── Aurora Hero CTA — solid ── */
+  .aurora-btn-primary {
+    @apply inline-flex items-center gap-1.5
+           border border-white text-white bg-transparent
+           px-7 py-3.5 text-[13px] uppercase tracking-widest font-semibold
+           cursor-pointer transition-all duration-200
+           hover:bg-white hover:text-ink;
+    border-radius: 2px;
+  }
+
+  /* ── Aurora Ghost / WhatsApp ── */
+  .aurora-btn-ghost {
+    @apply inline-flex items-center gap-2
+           bg-transparent text-white/75 px-5 py-3.5
+           text-[13px] uppercase tracking-widest font-semibold
+           cursor-pointer border border-white/30
+           transition-all duration-200
+           hover:text-white hover:border-white/70;
+    border-radius: 2px;
+  }
+
+  /* ── Aurora secondary (dark on light) ── */
+  .aurora-btn-secondary {
+    @apply inline-flex items-center gap-2
+           bg-transparent text-ink px-6 py-3
+           text-[12.5px] uppercase tracking-widest font-semibold
+           cursor-pointer border border-ink/30
+           transition-all duration-200
+           hover:border-ink hover:bg-ink hover:text-white;
+    border-radius: 2px;
+  }
+
+  /* ── Aurora Eyebrow ── */
+  .aurora-eyebrow {
+    @apply text-[11px] uppercase tracking-[0.22em] font-semibold text-muted;
+  }
+
+  /* ── Booking bar ── */
+  .aurora-booking-bar {
+    @apply flex flex-col md:flex-row bg-white shadow-2xl;
+    border-top: 1px solid #e8e4dc;
+  }
+
+  .aurora-booking-field {
+    @apply flex flex-col justify-center px-6 py-4 flex-1
+           border-b md:border-b-0 border-hairline;
+    min-width: 0;
+  }
+
+  .aurora-booking-label {
+    @apply block text-[10.5px] uppercase tracking-[0.18em] text-muted font-semibold mb-1.5;
+  }
+
+  .aurora-booking-input {
+    @apply w-full bg-transparent text-ink text-[15px] font-garamond
+           border-0 outline-none cursor-pointer
+           appearance-none;
+  }
+
+  .aurora-booking-divider {
+    @apply hidden md:block w-px bg-hairline my-3 flex-shrink-0;
+  }
+
+  .aurora-availability-btn {
+    @apply flex items-center justify-center gap-2 bg-ink text-white
+           px-8 py-5 text-[12.5px] uppercase tracking-widest font-semibold
+           cursor-pointer transition-all duration-200
+           hover:bg-[#1a2120]
+           flex-shrink-0 whitespace-nowrap;
+    border-radius: 0;
+  }
+
+  /* ── Aurora Room Card ── */
+  .aurora-room-card {
+    @apply bg-white border border-hairline overflow-hidden
+           cursor-pointer transition-shadow duration-300
+           hover:shadow-md;
+  }
+
+  /* ──────────────────────────────────────────
+     LEGACY / SHARED UTILITIES
+  ────────────────────────────────────────── */
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-block bg-laterite text-white px-6 py-3 text-sm uppercase tracking-widest
+           font-semibold cursor-pointer border border-laterite transition-colors duration-200
+           hover:bg-[#8a3722] hover:border-[#8a3722] focus-visible:outline-2;
+    border-radius: 3px;
+  }
+
+  .btn-secondary {
+    @apply inline-block bg-transparent text-ink px-6 py-3 text-sm uppercase tracking-widest
+           font-semibold cursor-pointer border border-ink transition-colors duration-200
+           hover:bg-ink hover:text-white focus-visible:outline-2;
+    border-radius: 3px;
+  }
+
+  .btn-ghost-white {
+    @apply inline-block bg-transparent text-white px-6 py-3 text-sm uppercase tracking-widest
+           font-semibold cursor-pointer border border-white transition-colors duration-200
+           hover:bg-white hover:text-ink focus-visible:outline-2;
+    border-radius: 3px;
+  }
+
+  /* ── Eyebrow / label ── */
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.18em] text-muted font-semibold;
+  }
+
+  /* ── Section wrapper ── */
+  .section-inner {
+    @apply max-w-content mx-auto px-6 md:px-10 lg:px-12;
+  }
+
+  /* ── Hairline divider ── */
+  .hairline {
+    @apply border-t border-hairline;
+  }
+
+  /* ── Map iframe ── */
+  .map-embed {
+    @apply w-full h-full border-0;
+    border-radius: 0;
+  }
+
+  /* ── Feature list item ── */
+  .feature-item {
+    @apply flex gap-3 items-start text-[17px] text-ink;
+  }
+
+  /* ── Thumbnail strip image ── */
+  .thumb-img {
+    @apply w-full aspect-square object-cover cursor-pointer border-2 border-transparent
+           transition-colors duration-150;
+    border-radius: 0;
+  }
+  .thumb-img.active,
+  .thumb-img:hover {
+    @apply border-laterite;
+  }
+
+  /* ── Nav link (legacy) ── */
+  .nav-link {
+    @apply text-[15px] text-white/80 uppercase tracking-widest hover:text-white transition-colors
+           duration-150 pb-0.5 border-b border-transparent hover:border-white/40;
+  }
+  .nav-link.active {
+    @apply text-white border-b border-white;
+  }
+
+  /* ── Form inputs ── */
+  .form-label {
+    @apply block text-[15px] uppercase tracking-widest text-muted mb-1 font-semibold;
+  }
+  .form-input {
+    @apply w-full border border-hairline bg-white text-ink px-4 py-3 text-[17px]
+           focus:outline-none focus:border-ink transition-colors duration-150;
+    border-radius: 2px;
+  }
+}

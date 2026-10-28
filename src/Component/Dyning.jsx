@@ -1,49 +1,45 @@
-import { Box, Flex ,Text, useDisclosure,Button, TabList, TabIndicator, TabPanels, TabPanel,Tab, Tabs, List, ListItem, ListIcon} from '@chakra-ui/react'
-import React from 'react'
-import { FaBowlRice } from 'react-icons/fa6';
-import { GiForkKnifeSpoon } from 'react-icons/gi';
-import { HiChevronDown, HiChevronUp } from 'react-icons/hi';
-import { MdCheckCircle, MdFreeBreakfast, MdSettings } from 'react-icons/md';
+import React from 'react';
 
-const Dyning = () => {
-    const { isOpen, onToggle } = useDisclosure();
+const meals = [
+  { img: './Image/food2.jpg', label: 'Breakfast' },
+  { img: './Image/food1.jpg', label: 'Lunch' },
+  { img: './Image/food3.jpg', label: 'Dinner' },
+];
+
+export default function Dyning() {
   return (
-    <Box bg="#f4f4f4" paddingTop={{lg:"50px",md:"30px", base:"15px"}} paddingBottom={{lg:"50px",md:"30px", base:"15px"}}>
-    <Flex direction="column" borderRadius={20} gap={10} justifyContent="center" id='dyning' marginLeft={{lg:"100px",md:"70px", base:"30px"}} marginRight={{lg:"100px",md:"70px", base:"30px"}}   boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" bg="white" p={{lg:"20px",md:"20px", base:"30px"}}>
-        <Text fontWeight={600} fontSize={45} textAlign="center">Dining</Text>
-        <Flex id='smcol' direction={{lg:"row",md:"column",base:"column"}} justifyContent="center" alignContent="center" alignItems="center" gap={10}>
-        <Flex direction="column" gap={3}>
-        <div class="Dcard">
-            <img src="./Image/food2.jpg" className='Dimg' alt="" />
-         </div>
-         <div>
-         <Text textAlign="center">Breakfast</Text>
-         </div>
-         </Flex>
-         <Flex direction="column" gap={3}>
-         <div class="Dcard">
-            <img src="./Image/food1.jpg" className='Dimg' alt="" />
-         </div>
-         <div>
-         <Text textAlign="center">Lunch</Text>
-         </div>
-        </Flex>
-        <Flex direction="column" gap={3}>
-         <div class="Dcard">
-            <img src="./Image/food3.jpg" className='Dimg' alt="" />
-         </div>
-         <div>
-         <Text textAlign="center">Dinner</Text>
-         </div>
-         </Flex>
-         
-        </Flex>
- 
-   
-    </Flex>
-    </Box>
+    <section id="dyning" className="bg-paper py-20 md:py-28">
+      <div className="section-inner">
+        <p className="eyebrow text-muted mb-4">Fresh &amp; Local</p>
+        <h2 className="font-garamond text-3xl md:text-4xl font-semibold text-ink mb-12">
+          Dining
+        </h2>
 
-  )
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {meals.map((meal) => (
+            <div
+              key={meal.label}
+              className="bg-white border border-hairline overflow-hidden flex flex-col"
+            >
+              <div className="border-b border-hairline">
+                <img
+                  src={meal.img}
+                  alt={meal.label}
+                  width={400}
+                  height={300}
+                  loading="lazy"
+                  className="w-full aspect-[4/3] object-cover"
+                />
+              </div>
+              <div className="p-4 text-center">
+                <p className="font-garamond text-xl font-medium text-ink">
+                  {meal.label}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
-
-export default Dyning
